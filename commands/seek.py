@@ -1,6 +1,6 @@
 import asyncio
 from discord.ext import commands
-from config import EMBED_COLOR
+from commands.config import EMBED_COLOR
 from functions.check_vc import voice_check
 from functions.convert_time import convert_from_ms, convert_to_ms
 

@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from discord.ui import Button, View
-from config import EMBED_COLOR
+from commands.config import EMBED_COLOR
 
 class Queue(commands.Cog):
     @commands.hybrid_command(name="queue", description="View the current song queue", aliases=["q"])

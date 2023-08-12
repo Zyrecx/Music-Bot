@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from config import TOKEN
+from commands.config import TOKEN
 from client import bot 
 
 @bot.event

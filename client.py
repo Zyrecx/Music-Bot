@@ -1,4 +1,4 @@
-import discord, wavelink, os, config
+import discord, wavelink, os, commands.config as config
 from discord.ext import commands
 from wavelink.ext import spotify
 
