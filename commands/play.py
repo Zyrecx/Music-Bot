@@ -1,7 +1,7 @@
 import discord, wavelink, urllib.parse
 from discord.ext import commands
 from wavelink.ext import spotify
-from commands.config import EMBED_COLOR
+from config import EMBED_COLOR
 
 class Play(commands.Cog):
     def __init__(self, bot):

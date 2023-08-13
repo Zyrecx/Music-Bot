@@ -1,7 +1,7 @@
 import discord, wavelink
 from discord.ui import Button, View, Modal, TextInput
 from discord.ext import commands
-from commands.config import EMBED_COLOR
+from config import EMBED_COLOR
 from functions.check_vc import voice_check
 
 class AddSong(Modal, title="Add Song"):
@@ -70,11 +70,11 @@ class Controls(commands.Cog):
             player:wavelink.Player = Interaction.guild.voice_client
             if player.queue.count == 0:
                 embed = discord.Embed(title="There are no songs in the queue", color=EMBED_COLOR)
-                return await ctx.send(embed=embed, delete_after=2)
+                return await Interaction.response.send_message(embed=embed, delete_after=2)
 
             song = player.queue.get()
             await player.play(song)
-            await ctx.send(f"Skipped to {song.title}")
+            await Interaction.response.send_message(f"Skipped to {song.title}")
 
         async def addsongButton(Interaction:discord.Interaction):
             await Interaction.response.send_modal(AddSong(bot=self.bot))

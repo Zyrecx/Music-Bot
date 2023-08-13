@@ -1,5 +1,6 @@
+from discord import Embed
 from discord.ext import commands
-from commands.config import EMBED_COLOR
+from config import EMBED_COLOR
 from functions.check_vc import voice_check
 
 class Stop(commands.Cog):
@@ -8,12 +9,16 @@ class Stop(commands.Cog):
     async def stop(self, ctx: commands.Context):
         player = ctx.voice_client
         if not player:
-            return await ctx.send("Not in voice channel to pause")
+            embed = Embed(title="Not in voice channel to pause", color=EMBED_COLOR)
+            return await ctx.send(embed=embed)
         if player.current is None:
-            return await ctx.send("Not playing anything to pause")
+            embed = Embed(title="Not playing anything to pause", color=EMBED_COLOR)
+            return await ctx.send(embed=embed)
+        
         player.queue.clear()
         await player.stop()
-        await ctx.send(f"Player Stopped")
+        embed = Embed(title="Player Stopped", color=EMBED_COLOR)
+        await ctx.send(embed=embed)
 
 async def setup(bot):
     await bot.add_cog(Stop(bot))

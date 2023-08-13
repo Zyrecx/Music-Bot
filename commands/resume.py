@@ -1,6 +1,6 @@
 from discord import Embed
 from discord.ext import commands
-from commands.config import EMBED_COLOR
+from config import EMBED_COLOR
 from functions.check_vc import voice_check
 
 class Resume(commands.Cog):

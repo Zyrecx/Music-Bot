@@ -1,8 +1,8 @@
 import wavelink
-from discord.ext import commands
-from commands.config import EMBED_COLOR
-from functions.check_vc import voice_check
 from discord import Embed
+from discord.ext import commands
+from config import EMBED_COLOR
+from functions.check_vc import voice_check
 
 class Filters(commands.Cog):
     @commands.hybrid_command(name="8d", description="Apply an 8D audio effect to the player", aliases=["3d"])

@@ -1,6 +1,6 @@
 import discord, wavelink
 from discord.ext import commands
-from commands.config import EMBED_COLOR
+from config import EMBED_COLOR
 from functions.convert_time import convert_from_ms
 
 class NowPlaying(commands.Cog):
