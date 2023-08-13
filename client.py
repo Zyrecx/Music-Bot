@@ -20,13 +20,6 @@ class MusicBot(commands.Bot):
                 except Exception as e:
                     print(f"{extention} cannot be loaded: {e}")
                     
-        # try:
-        #     await self.load_extension("api.server")
-        #     print(f'Started {extention}')
-        # except Exception as e:
-        #     print(f"{extention} cannot be started: {e}")
-        # print("Music Bot is Starting!")
-
     async def on_ready(self):
         #Sync slash commands
         await self.wait_until_ready()
